@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UJ Hub | Submitted Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-main text-light">
+<header class="site-header">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between py-3">
+    <h1 class="site-title m-0">UJ Hub</h1>
+    <nav aria-label="Main navigation">
+      <ul class="nav main-nav w-100">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+
+        <!-- Only for logged-in users -->
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="events-register.html">Register</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="submitted-forms.html">Submitted Forms</a></li>
+
+        <!-- Right side: login OR dropdown -->
+        <li class="nav-item ms-auto" id="navLoginWrapper">
+          <a href="login.html" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item dropdown ms-auto d-none" id="navUserWrapper">
+          <a href="#" class="nav-link dropdown-toggle" id="navUserToggle" role="button">
+            Logged in as: <span id="navUserId"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="navUserDropdown">
+            <li><button class="dropdown-item" id="navLogoutBtn" type="button">Logout</button></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+<main>
+    <section class="page-header-section py-5">
+        <div class="container">
+            <h2 class="h2 mb-3">Your Submitted Forms</h2>
+            <p class="text-light-muted mb-0">
+                This page shows the contact messages and event registrations submitted
+                using your student ID.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="mb-4">
+                <label class="form-label">Student ID (logged in)</label>
+                <input id="submittedStudentId" class="form-control form-control-dark w-auto" readonly>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card form-card p-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Your Contact Messages</h5>
+                            <button class="btn btn-sm btn-outline-info" id="refreshContactsBtn">
+                                Refresh
+                            </button>
+                        </div>
+                        <div id="submittedContacts" class="small"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card form-card p-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Your Event Registrations</h5>
+                            <button class="btn btn-sm btn-outline-info" id="refreshEventsBtn">
+                                Refresh
+                            </button>
+                        </div>
+                        <div id="submittedEvents" class="small"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer py-4 mt-auto">
+    <div class="container text-center small text-light-muted">
+        <p class="mb-1">&copy; 2025 UJ Hub – University of Jeddah</p>
+        <p class="mb-0">Submitted Forms · CCSW321 – Web Development</p>
+    </div>
+</footer>
+
+<script src="validation.js"></script>
+</body>
+</html>

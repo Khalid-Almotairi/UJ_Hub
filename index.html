@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UJ Hub | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS (CSS only, no JS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-main text-light">
+<header class="site-header">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between py-3">
+    <h1 class="site-title m-0">UJ Hub</h1>
+    <nav aria-label="Main navigation">
+      <ul class="nav main-nav w-100">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+
+        <!-- Only for logged-in users -->
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="events-register.html">Register</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="submitted-forms.html">Submitted Forms</a></li>
+
+        <!-- Right side: login OR dropdown -->
+        <li class="nav-item ms-auto" id="navLoginWrapper">
+          <a href="login.html" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item dropdown ms-auto d-none" id="navUserWrapper">
+          <a href="#" class="nav-link dropdown-toggle" id="navUserToggle" role="button">
+            Logged in as: <span id="navUserId"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="navUserDropdown">
+            <li><button class="dropdown-item" id="navLogoutBtn" type="button">Logout</button></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+    <!-- HERO -->
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="display-5 fw-bold mb-3">Welcome to UJ Hub</h2>
+                    <p class="lead text-light-muted">
+                        UJ Hub is the central portal for University of Jeddah students to
+                        discover and register for hackathons, competitions, and technology events.
+                        View upcoming events, submit registrations, and connect with the campus tech community.
+                    </p>
+                    
+                </div>
+
+                <aside class="col-lg-5">
+                    <div class="card login-card p-4">
+                    <video autoplay muted loop style="width: 100%; height: auto;">
+                        <source src="UJ-WEB.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPCOMING EVENTS -->
+    <section class="py-5">
+        <div class="container">
+            <header class="mb-4">
+                <h2 class="h3 mb-1">Upcoming UJ Events</h2>
+                <p class="text-light-muted mb-0">
+                    Share us your thoughts and suggestions for upcoming events from the contact us option.
+                </p>
+            </header>
+
+            <div class="row g-4">
+                <article class="col-md-6 col-lg-3">
+                    <div class="card event-card h-100 p-3">
+                        <h3 class="h5">AI &amp; Data Science Challenge</h3>
+                        <p class="text-light-muted mb-1">April 20, 2026</p>
+                        <p class="text-light-muted mb-2">UJ Main Campus</p>
+                        <span class="badge bg-primary">Hackathon</span>
+                    </div>
+                </article>
+
+                <article class="col-md-6 col-lg-3">
+                    <div class="card event-card h-100 p-3">
+                        <h3 class="h5">Web Development Sprint</h3>
+                        <p class="text-light-muted mb-1">May 5, 2026</p>
+                        <p class="text-light-muted mb-2">Online</p>
+                        <span class="badge bg-info text-dark">Code Sprint</span>
+                    </div>
+                </article>
+
+                <article class="col-md-6 col-lg-3">
+                    <div class="card event-card h-100 p-3">
+                        <h3 class="h5">Cybersecurity CTF</h3>
+                        <p class="text-light-muted mb-1">May 18, 2026</p>
+                        <p class="text-light-muted mb-2">Security Lab</p>
+                        <span class="badge bg-danger">CTF</span>
+                    </div>
+                </article>
+
+                <article class="col-md-6 col-lg-3">
+                    <div class="card event-card h-100 p-3">
+                        <h3 class="h5">Mobile App Innovation Weekend</h3>
+                        <p class="text-light-muted mb-1">June 1, 2026</p>
+                        <p class="text-light-muted mb-2">UJ Innovation Center</p>
+                        <span class="badge bg-success">Hackathon</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer py-4 mt-auto">
+    <div class="container text-center small text-light-muted">
+        <p class="mb-1">&copy; 2025 UJ Hub – University of Jeddah</p>
+        <p class="mb-0">College of Computer Science and Engineering · CCSW321 – Web Development</p>
+    </div>
+</footer>
+<script src="validation.js"></script>
+
+</body>
+</html>

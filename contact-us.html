@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UJ Hub | Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-main text-light">
+<header class="site-header">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between py-3">
+    <h1 class="site-title m-0">UJ Hub</h1>
+    <nav aria-label="Main navigation">
+      <ul class="nav main-nav w-100">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+
+        <!-- Only for logged-in users -->
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="events-register.html">Register</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="submitted-forms.html">Submitted Forms</a></li>
+
+        <!-- Right side: login OR dropdown -->
+        <li class="nav-item ms-auto" id="navLoginWrapper">
+          <a href="login.html" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item dropdown ms-auto d-none" id="navUserWrapper">
+          <a href="#" class="nav-link dropdown-toggle" id="navUserToggle" role="button">
+            Logged in as: <span id="navUserId"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="navUserDropdown">
+            <li><button class="dropdown-item" id="navLogoutBtn" type="button">Logout</button></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+<main>
+    <section class="page-header-section py-5">
+        <div class="container">
+            <h2 class="h2 mb-3">Contact the Organizing Team</h2>
+            <p class="text-light-muted mb-0">
+                Use the form below to contact the UJ Hub organizers regarding events, registration,
+                or technical issues. All fields marked with * are required.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-4" aria-labelledby="contact-section-heading">
+    <div class="container">
+
+        <!-- Heading for the SECTION -->
+        <h2 id="contact-section-heading" class="h3 mb-4">Contact Form & Information</h2>
+
+        <div class="row g-4">
+
+            <article class="col-lg-6">
+                <h3 class="h4 mb-3">Contact Information</h3>
+                ...
+            </article>
+
+            <article class="col-lg-6">
+                <h3 class="h4 mb-3">Send Us a Message</h3>
+
+                <div class="card form-card p-4">
+                    <form id="contactForm" novalidate>
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label for="contactStudentId" class="form-label">Student ID *</label>
+                                    <input id="contactStudentId" type="text"
+                                           class="form-control form-control-dark"
+                                           readonly>
+                                </div>
+
+                                <div class="col-md-6"></div>
+
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input id="firstName" name="firstName" type="text"
+                                           class="form-control form-control-dark"
+                                           required maxlength="30">
+                                    <div id="firstNameError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input id="lastName" name="lastName" type="text"
+                                           class="form-control form-control-dark"
+                                           required maxlength="30">
+                                    <div id="lastNameError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12">
+                                    <span class="form-label d-block">Gender *</span>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender"
+                                                   id="genderMale" value="Male" required>
+                                            <label class="form-check-label" for="genderMale">Male</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender"
+                                                   id="genderFemale" value="Female" required>
+                                            <label class="form-check-label" for="genderFemale">Female</label>
+                                        </div>
+                                    </div>
+                                    <div id="genderError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="mobile" class="form-label">Mobile *</label>
+                                    <input id="mobile" name="mobile" type="tel"
+                                           class="form-control form-control-dark"
+                                           required maxlength="10" placeholder="05xxxxxxxx">
+                                    <div id="mobileError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="dob" class="form-label">Date of Birth *</label>
+                                    <input id="dob" name="dob" type="date"
+                                           class="form-control form-control-dark" required>
+                                    <div id="dobError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input id="email" name="email" type="email"
+                                           class="form-control form-control-dark"
+                                           required maxlength="60">
+                                    <div id="emailError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="language" class="form-label">Preferred Language *</label>
+                                    <select id="language" name="language"
+                                            class="form-select form-control-dark" required>
+                                        <option value="">-- Please select --</option>
+                                        <option value="Arabic">Arabic</option>
+                                        <option value="English">English</option>
+                                        <option value="French">French</option>
+                                    </select>
+                                    <div id="languageError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea id="message" name="message"
+                                              class="form-control form-control-dark"
+                                              rows="5" required maxlength="500"></textarea>
+                                    <div id="messageError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12 d-flex gap-2">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                    <button type="reset" class="btn btn-outline-light">Clear</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- simple success message -->
+                        <div id="contactResponse" class="mt-3"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer py-4 mt-auto">
+    <div class="container text-center small text-light-muted">
+        <p class="mb-1">&copy; 2025 UJ Hub – University of Jeddah</p>
+        <p class="mb-0">Contact Us · CCSW321 – Web Development</p>
+    </div>
+</footer>
+
+<script src="validation.js"></script>
+</body>
+</html>

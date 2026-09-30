@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UJ Hub | Event Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-main text-light">
+<header class="site-header">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between py-3">
+    <h1 class="site-title m-0">UJ Hub</h1>
+    <nav aria-label="Main navigation">
+      <ul class="nav main-nav w-100">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+
+        <!-- Only for logged-in users -->
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="events-register.html">Register</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        <li class="nav-item nav-auth-only"><a class="nav-link" href="submitted-forms.html">Submitted Forms</a></li>
+
+        <!-- Right side: login OR dropdown -->
+        <li class="nav-item ms-auto" id="navLoginWrapper">
+          <a href="login.html" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item dropdown ms-auto d-none" id="navUserWrapper">
+          <a href="#" class="nav-link dropdown-toggle" id="navUserToggle" role="button">
+            Logged in as: <span id="navUserId"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" id="navUserDropdown">
+            <li><button class="dropdown-item" id="navLogoutBtn" type="button">Logout</button></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+<main>
+    <section class="page-header-section py-5">
+        <div class="container">
+            <h2 class="h2 mb-3">Event Registration</h2>
+            <p class="text-light-muted mb-0">
+                Register as a participant for upcoming UJ hackathons and technology events,
+                choose the event that you want to participate in and fill the required details.
+            </p>
+        </div>
+    </section>
+
+   <section class="py-4" aria-labelledby="registration-section-heading">
+    <div class="container">
+        <!-- Heading for the section -->
+        <h2 id="registration-section-heading" class="h3 mb-4">Event Registration Form</h2>
+
+        <div class="row g-4">
+            <!-- Article with its own heading -->
+            <article class="col-lg-12" aria-labelledby="registration-form-heading">
+                <div class="card form-card p-4">
+                    <h3 id="registration-form-heading" class="h4 mb-3">Participant Details</h3>
+                    <form id="registrationForm" novalidate>
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label for="studentId" class="form-label">Student ID *</label>
+                                    <input id="studentId" name="studentId" type="text"
+                                           class="form-control form-control-dark"
+                                           readonly>
+                                    <div id="studentIdError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6"></div>
+
+                                <div class="col-md-6">
+                                    <label for="fullName" class="form-label">Full Name *</label>
+                                    <input id="fullName" name="fullName" type="text"
+                                           class="form-control form-control-dark"
+                                           required maxlength="60">
+                                    <div id="fullNameError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="regEmail" class="form-label">Email *</label>
+                                    <input id="regEmail" name="regEmail" type="email"
+                                           class="form-control form-control-dark"
+                                           required maxlength="60">
+                                    <div id="regEmailError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Mobile *</label>
+                                    <input id="phone" name="phone" type="tel"
+                                           class="form-control form-control-dark"
+                                           required maxlength="10"
+                                           placeholder="05xxxxxxxx">
+                                    <div id="phoneError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6"></div>
+
+                                <div class="col-12">
+                                    <label for="eventSelect" class="form-label">Select Event *</label>
+                                    <select id="eventSelect" name="eventSelect"
+                                            class="form-select form-control-dark" required>
+                                        <option value="">-- Choose an event --</option>
+                                        <option value="AI &amp; Data Science Challenge">AI &amp; Data Science Challenge</option>
+                                        <option value="Web Development Sprint">Web Development Sprint</option>
+                                        <option value="Cybersecurity CTF">Cybersecurity CTF</option>
+                                        <option value="Mobile App Innovation Weekend">Mobile App Innovation Weekend</option>
+                                    </select>
+                                    <div id="eventSelectError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="track" class="form-label">Preferred Track *</label>
+                                    <select id="track" name="track"
+                                            class="form-select form-control-dark" required>
+                                        <option value="">-- Select a track --</option>
+                                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Mobile Applications">Mobile Applications</option>
+                                        <option value="Cybersecurity">Cybersecurity</option>
+                                    </select>
+                                    <div id="trackError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="skillLevel" class="form-label">Skill Level *</label>
+                                    <select id="skillLevel" name="skillLevel"
+                                            class="form-select form-control-dark" required>
+                                        <option value="">-- Select level --</option>
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                    </select>
+                                    <div id="skillLevelError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="teamName" class="form-label">Team Name (optional)</label>
+                                    <input id="teamName" name="teamName" type="text"
+                                           class="form-control form-control-dark"
+                                           maxlength="40">
+                                    <div id="teamNameError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="teamSize" class="form-label">Number of Team Members *</label>
+                                    <input id="teamSize" name="teamSize" type="number"
+                                           class="form-control form-control-dark"
+                                           required min="1" max="8">
+                                    <div id="teamSizeError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="notes" class="form-label">Project Idea / Notes</label>
+                                    <textarea id="notes" name="notes"
+                                              class="form-control form-control-dark"
+                                              rows="4" maxlength="400"
+                                              placeholder="Describe your idea or what you want to build."></textarea>
+                                    <div id="notesError" class="text-danger small error-message"></div>
+                                </div>
+
+                                <div class="col-12 d-flex gap-2">
+                                    <button type="submit" class="btn btn-primary">Submit Registration</button>
+                                    <button type="reset" class="btn btn-outline-light">Clear</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- simple success message -->
+                        <div id="registrationResponse" class="mt-3"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer py-4 mt-auto">
+    <div class="container text-center small text-light-muted">
+        <p class="mb-1">&copy; 2025 UJ Hub – University of Jeddah</p>
+        <p class="mb-0">Event Registration · CCSW321 – Web Development</p>
+    </div>
+</footer>
+<script src="validation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* ===== BASIC RESET ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===== THEME COLORS ===== */
+.bg-dark-main {
+    background-color: #0B0F19;
+}
+
+.text-light-muted {
+    color: #c5cad8 !important; /* brighter than before */
+}
+
+/* ===== BODY & LAYOUT ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #e5e7eb; /* default text is light */
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* ===== HEADER & NAV ===== */
+.site-header {
+    background-color: #0F172A;
+    border-bottom: 1px solid #1E293B;
+}
+
+.site-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.main-nav {
+    gap: 0.25rem;
+}
+
+.main-nav .nav-link {
+    color: #E5E7EB;
+    border-radius: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.95rem;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+    background-color: #2563EB;
+    color: #F9FAFB;
+}
+
+/* ===== HERO ===== */
+.hero-section {
+    background: linear-gradient(135deg, #0B0F19 0%, #111827 100%);
+}
+
+/* ===== CARDS (LOGIN / EVENT / FORM) ===== */
+.login-card,
+.event-card,
+.form-card {
+    background-color: #141b2f;        /* lighter than body for contrast */
+    border: 1px solid #27324a;
+    border-radius: 0.75rem;
+    color: #e5e7eb;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    transition: transform 0.15s ease-in-out;
+}
+
+/* ===== FORM CONTROLS ===== */
+.form-control-dark,
+.form-select.form-control-dark {
+    background-color: #020617;
+    border: 1px solid #4b5563;
+    color: #f9fafb;
+}
+
+/* brighter label text inside dark cards */
+.form-card .form-label,
+.form-card label,
+.form-card .form-check-label {
+    color: #e5e7eb;
+}
+
+/* radio text, etc. in contact/register cards */
+.form-card .form-check-input {
+    background-color: #020617;
+    border-color: #6b7280;
+}
+
+/* focus state */
+.form-control-dark:focus,
+.form-select.form-control-dark:focus {
+    background-color: #020617;
+    border-color: #2563EB;
+    color: #FFFFFF;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+}
+
+/* placeholder text – brighter so it’s readable */
+.form-control-dark::placeholder,
+textarea.form-control-dark::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+}
+
+/* make select text readable on dark background */
+.form-select.form-control-dark {
+    color: #E5E7EB;
+}
+
+/* ===== ERROR MESSAGES ===== */
+.error-message {
+    min-height: 1rem;
+}
+
+.error-message,
+.text-danger {
+    color: #f97373 !important;  /* readable red */
+}
+
+/* ===== PAGE HEADER SECTIONS ===== */
+.page-header-section {
+    border-bottom: 1px solid #1E293B;
+}
+
+/* ===== TABLE STYLING (ABOUT US) ===== */
+.developer-table caption {
+    caption-side: top;
+    color: #E5E7EB;
+    padding-bottom: 0.25rem;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: #020617;
+    border-top: 1px solid #1E293B;
+}
+
+.site-footer p {
+    margin: 0.1rem 0;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 992px) {
+    .hero-section {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
